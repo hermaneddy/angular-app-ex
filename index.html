@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+
+  <head>
+   
+  </head> 
+   <body >
+
+
+   	<div ng-controller="SimpleController">
+
+
+   	Name
+   	<br>
+   	<input type="text" ng-model="name" /><br><br>{{ name }} 
+
+   	<br><br>
+   	<ul>
+
+    	<li ng-repeat="cust in customers | filter: name | orderBy: 'city'">{{cust.name | uppercase}} - {{cust.city}}</li>
+
+   	</ul>
+   </div>	
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.min.js"></script>
+	<script src="SimpleController.js"></script>
+   </body>
+
+</html>
+
